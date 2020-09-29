@@ -12,7 +12,7 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.enableZoom = true;
 
-var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
+var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,100%)'), 1.0);
 keyLight.position.set(-100, 0, 100);
 
 var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
@@ -26,16 +26,16 @@ scene.add(fillLight);
 scene.add(backLight);
 
 var mtlLoader = new THREE.MTLLoader();
-mtlLoader.setTexturePath('/examples/3d-obj-loader/assets/');
-mtlLoader.setPath('/examples/3d-obj-loader/assets/');
-mtlLoader.load('r2-d2.mtl', function (materials) {
+mtlLoader.setTexturePath('/examples/bottom/assets/');
+mtlLoader.setPath('/examples/bottom/assets/');
+mtlLoader.load('bottom.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
-    objLoader.setPath('/examples/3d-obj-loader/assets/');
-    objLoader.load('r2-d2.obj', function (object) {
+    objLoader.setPath('/examples/bottom/assets/');
+    objLoader.load('bottom.obj', function (object) {
 
         scene.add(object);
         object.position.y -= 60;

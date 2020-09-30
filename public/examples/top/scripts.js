@@ -24,6 +24,7 @@ backLight.position.set(100, 0, -100).normalize();
 scene.add(keyLight);
 scene.add(fillLight);
 scene.add(backLight);
+scene.background = new THREE.Color( 0xffffff );
 
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setTexturePath('/examples/top/assets/');

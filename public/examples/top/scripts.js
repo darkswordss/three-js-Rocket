@@ -1,7 +1,10 @@
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 500, window.innerWidth/window.innerHeight, 0.1, 1000 );
-camera.position.z = 100;
+var camera = new THREE.PerspectiveCamera( 1000, window.innerWidth/window.innerHeight, 0.5, 2000 );
+camera.position.z = 150;
+camera.position.y=10;
+camera.position.r
+
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -9,13 +12,14 @@ document.body.appendChild( renderer.domElement );
 
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.dampingFactor = 0.25;
+controls.dampingFactor = 1;
 controls.enableZoom = true;
+
 
 var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,100%)'), 1.0);
 keyLight.position.set(-100, 0, 100);
 
-var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
+var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(22,83%,38%)'), 0.75);
 fillLight.position.set(100, 0, 100);
 
 var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -39,7 +43,8 @@ mtlLoader.load('top.mtl', function (materials) {
     objLoader.load('top.obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 60;
+        object.position.y -= 700;
+        object.position.x -= 300;
 
     });
 
@@ -47,6 +52,7 @@ mtlLoader.load('top.mtl', function (materials) {
 
 var animate = function () {
 	requestAnimationFrame( animate );
+	camera.lookAt( scene.position );
 	controls.update();
 	renderer.render(scene, camera);
 };

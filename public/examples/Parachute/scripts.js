@@ -12,10 +12,10 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.5;
 controls.enableZoom = true;
 
-var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30,0%,75%)'), 1.0);
+var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,100%)'), 1.0);
 keyLight.position.set(-100, 0, 100);
 
-var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240,100%,52%)'), 0.75);
+var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(22,83%,38%)'), 0.75);
 fillLight.position.set(100, 0, 100);
 
 var backLight = new THREE.DirectionalLight(0xffffff, 1.0);

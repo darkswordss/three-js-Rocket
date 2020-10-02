@@ -1,9 +1,8 @@
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 1000, window.innerWidth/window.innerHeight, 0.5, 2000 );
-camera.position.z = 150;
-camera.position.y=10;
-camera.position.r
+var camera = new THREE.PerspectiveCamera( 1000, window.innerWidth/window.innerHeight, 0.5, 4000 );
+camera.position.z = 1500;
+
 
 
 var renderer = new THREE.WebGLRenderer();
@@ -43,8 +42,8 @@ mtlLoader.load('top.mtl', function (materials) {
     objLoader.load('top.obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 700;
-        object.position.x -= 300;
+        object.position.y -= 100;
+        object.position.x -= 200;
 
     });
 

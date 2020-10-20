@@ -15,11 +15,11 @@ controls.enableZoom = true;
 var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,100%)'), 1.0);
 keyLight.position.set(-100, 0, 100);
 
-var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(22,83%,38%)'), 0.75);
+var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(21,21%,87%)'), 0.75);
 fillLight.position.set(100, 0, 100);
 
 var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-backLight.position.set(100, 0, -100).normalize();
+backLight.position.set(100, 1000, -100).normalize();
 
 scene.add(keyLight);
 scene.add(fillLight);
@@ -29,14 +29,14 @@ scene.background = new THREE.Color( 0xffffff );
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setTexturePath('/examples/Rocket/assets/');
 mtlLoader.setPath('/examples/Rocket/assets/');
-mtlLoader.load('rocket with shear pins.mtl', function (materials) {
+mtlLoader.load('Rocket.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('/examples/Rocket/assets/');
-    objLoader.load('rocket with shear pins.obj', function (object) {
+    objLoader.load('Rocket.obj', function (object) {
 
         scene.add(object);
         object.position.y -= 200;

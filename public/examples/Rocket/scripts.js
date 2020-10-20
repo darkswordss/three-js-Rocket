@@ -29,14 +29,14 @@ scene.background = new THREE.Color( 0xffffff );
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setTexturePath('/examples/Rocket/assets/');
 mtlLoader.setPath('/examples/Rocket/assets/');
-mtlLoader.load('Rocket.mtl', function (materials) {
+mtlLoader.load('seethrough all rocket.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('/examples/Rocket/assets/');
-    objLoader.load('Rocket.obj', function (object) {
+    objLoader.load('seethrough all rocket.obj', function (object) {
 
         scene.add(object);
         object.position.y -= 200;

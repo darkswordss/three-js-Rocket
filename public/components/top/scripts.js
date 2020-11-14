@@ -30,15 +30,15 @@ scene.add(backLight);
 scene.background = new THREE.Color( 0xffffff );
 
 var mtlLoader = new THREE.MTLLoader();
-mtlLoader.setTexturePath('/examples/top/assets/');
-mtlLoader.setPath('/examples/top/assets/');
+mtlLoader.setTexturePath('/assets/');
+mtlLoader.setPath('/assets/');
 mtlLoader.load('top.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
-    objLoader.setPath('/examples/top/assets/');
+    objLoader.setPath('/assets/');
     objLoader.load('top.obj', function (object) {
 
         scene.add(object);

@@ -1,7 +1,7 @@
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-camera.position.z = 300;
+camera.position.z = 200;
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -27,20 +27,20 @@ scene.add(backLight);
 scene.background = new THREE.Color( 0xffffff );
 
 var mtlLoader = new THREE.MTLLoader();
-mtlLoader.setTexturePath('/examples/bottom/assets/');
-mtlLoader.setPath('/examples/bottom/assets/');
-mtlLoader.load('bottom.mtl', function (materials) {
+mtlLoader.setTexturePath('/assets/');
+mtlLoader.setPath('/assets/');
+mtlLoader.load('shearpin .mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
-    objLoader.setPath('/examples/bottom/assets/');
-    objLoader.load('bottom.obj', function (object) {
+    objLoader.setPath('/assets/');
+    objLoader.load('shearpin .obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 700;
-        object.position.x -= 300;
+        object.position.y -= 100;
+        object.position.x -= -170;
 
 
     });

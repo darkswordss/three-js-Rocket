@@ -1,7 +1,7 @@
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-camera.position.z =2;
+camera.position.z = 300;
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -9,7 +9,7 @@ document.body.appendChild( renderer.domElement );
 
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.dampingFactor = 0.5;
+controls.dampingFactor = 0.25;
 controls.enableZoom = true;
 
 var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,100%)'), 1.0);
@@ -27,28 +27,37 @@ scene.add(backLight);
 scene.background = new THREE.Color( 0xffffff );
 
 var mtlLoader = new THREE.MTLLoader();
-mtlLoader.setTexturePath('/examples/Parachute/assets/');
-mtlLoader.setPath('/examples/Parachute/assets/');
-mtlLoader.load('Parachute.mtl', function (materials) {
+mtlLoader.setTexturePath('assets/');
+mtlLoader.setPath('/assets/');
+mtlLoader.load('bottom.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
-    objLoader.setPath('/examples/Parachute/assets/');
-    objLoader.load('model.dae.obj', function (object) {
+    objLoader.setPath('/assets/');
+    objLoader.load('bottom.obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 0;
+        object.position.y -= 700;
+        object.position.x -= 300;
+
 
     });
 
 });
 
 var animate = function () {
+
 	requestAnimationFrame( animate );
+
 	controls.update();
+
 	renderer.render(scene, camera);
+
 };
 
 animate();
+
+
+

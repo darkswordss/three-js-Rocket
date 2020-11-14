@@ -32,14 +32,14 @@ scene.background = new THREE.Color( 0xffffff );
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setTexturePath('/assets/');
 mtlLoader.setPath('/assets/');
-mtlLoader.load('top.mtl', function (materials) {
+mtlLoader.load('texturecheck.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('/assets/');
-    objLoader.load('top.obj', function (object) {
+    objLoader.load('texturecheck.obj', function (object) {
 
         scene.add(object);
         object.position.y -= 100;

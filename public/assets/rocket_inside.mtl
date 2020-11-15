@@ -81,7 +81,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 3
-map_Kd UF.PNG
+map_Kd UF.png
 
 newmtl None
 Ns 500.000001
@@ -205,7 +205,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:\\Users\\Bat\\Documents\\three-js-boilerplate\\public\\assets\\material_8.jpg
+map_Kd material_8.jpg
 
 newmtl material_9.002
 Ns 96.078443
@@ -216,4 +216,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:\\Users\\Bat\\Documents\\three-js-boilerplate\\public\\assets\\material_9.jpg
+map_Kd material_9.jpg

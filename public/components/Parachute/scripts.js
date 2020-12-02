@@ -1,7 +1,7 @@
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-camera.position.z =2;
+var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 3000 );
+camera.position.z =1000;
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -29,17 +29,19 @@ scene.background = new THREE.Color( 0xffffff );
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setTexturePath('/assets/');
 mtlLoader.setPath('/assets/');
-mtlLoader.load('Parachute.mtl', function (materials) {
+mtlLoader.load('parachute.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('/assets/');
-    objLoader.load('model.dae.obj', function (object) {
+    objLoader.load('parachute.obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 0;
+        object.position.y -= 800;
+        object.position.z -= 50;
+        object.position.x -= 200;
 
     });
 

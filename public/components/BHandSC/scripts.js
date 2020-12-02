@@ -40,7 +40,8 @@ mtlLoader.load('bulkhead and shockcord.mtl', function (materials) {
 
         scene.add(object);
         object.position.y -= 50;
-        object.position.x -= -150;
+        object.position.x -=-20;
+        object.position.z -=120;
 
     });
 

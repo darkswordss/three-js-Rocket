@@ -1,7 +1,7 @@
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 1000, window.innerWidth/window.innerHeight, 0.5, 4000 );
-camera.position.z = 1500;
+var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.5, 1500 );
+camera.position.z = 1000;
 
 
 
@@ -44,6 +44,7 @@ mtlLoader.load('texturecheck.mtl', function (materials) {
         scene.add(object);
         object.position.y -= 100;
         object.position.x -= 200;
+
 
     });
 

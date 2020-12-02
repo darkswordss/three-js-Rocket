@@ -1,0 +1,13 @@
+# Blender MTL File: 'rocket_seperation.blend'
+# Material Count: 1
+
+newmtl Material.005
+Ns 323.999994
+Ka 0.229358 0.229358 0.229358
+Kd 0.694038 0.800000 0.732091
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+map_Kd \UF.png

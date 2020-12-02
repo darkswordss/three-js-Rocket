@@ -1,7 +1,8 @@
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1100);
-camera.position.z =1000;
+var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 2000 );
+camera.position.z =200;
+
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -39,8 +40,9 @@ mtlLoader.load('arduino and battery.mtl', function (materials) {
     objLoader.load('arduino and battery.obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 40;
-        object.position.x -=80;
+        object.position.y -= 30;
+        object.position.x -=50;
+        object.position.z -=300;
 
     });
 

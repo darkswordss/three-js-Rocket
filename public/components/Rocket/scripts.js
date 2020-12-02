@@ -39,8 +39,9 @@ mtlLoader.load('rocket_inside.mtl', function (materials) {
     objLoader.load('rocket_inside.obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 200;
+        object.position.y -= 0;
         object.position.x -= 0;
+        object.position.z -=-200;
 
 
     });

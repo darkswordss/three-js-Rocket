@@ -14,13 +14,14 @@ controls.dampingFactor = 0.5;
 controls.enableZoom = true;
 
 var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(0,0%,100%)'), 1.0);
-keyLight.position.set(-100, 0, 100);
+keyLight.position.set(400, 0, 100);
 
-var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(21,21%,87%)'), 0.75);
-fillLight.position.set(100, 0, 100);
+
+var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(22,83%,38%)'), 0.75);
+fillLight.position.set(100, 100, 300);
 
 var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-backLight.position.set(100, 200, -100).normalize();
+backLight.position.set(-100, 400, -100).normalize();
 
 scene.add(keyLight);
 scene.add(fillLight);
